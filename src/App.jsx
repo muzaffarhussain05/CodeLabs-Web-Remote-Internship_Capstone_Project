@@ -1,15 +1,36 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
+import { Layout } from "./pages/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Work from "./pages/Work";
+import Blog from "./pages/Blog";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    
+    <Route path="/" element={<Layout />}>
+    <Route index element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="work" element={<Work/>} />
+    <Route path="blog" element={<Blog/>} />
+   
+  </Route>
+  
+  )
+);
+
 
 const App = () => {
-  return (<Router>
-    <div>App</div>
-    <Routes>
-      {/* <Route path="/" element={< />} /> */}
-      {/* <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} /> */}
-    </Routes>
-  </Router>);
+  return (
+  
+     <RouterProvider router={router} />
+  );
 };
 
 export default App;
