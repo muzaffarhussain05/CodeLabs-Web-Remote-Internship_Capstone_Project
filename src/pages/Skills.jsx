@@ -1,14 +1,100 @@
 import React from "react";
 import porfileImg from "../assets/porfile.jpg";
-import {ArrowRight, HeartHandshake} from "lucide-react"
+import { ArrowRight, HeartHandshake } from "lucide-react";
+import Marquee from "react-fast-marquee";
+
+const ToolComp = ({ name, icon }) => {
+  return (
+    <>
+      <div className="bg-white-2 flex items-center justify-center rounded-lg border-2 border-gray-300 px-3 py-1 text-sm w-fit whitespace-nowrap shrink-0 gap-2 bg-neutral-100 mx-4">
+        <img height="18" width="18" alt="ReactJS" src={icon} class="" />
+        <p className="font-semibold text-black/60 text-sm">{name}</p>
+      </div>
+    </>
+  );
+};
 const Skills = () => {
+  const FirstTools = [
+    {
+      name: "ReactJS",
+      icon: "https://cdn.simpleicons.org/react",
+    },
+    {
+      name: "NextJS",
+      icon: "https://cdn.simpleicons.org/nextdotjs/white",
+    },
+    {
+      name: "TypeScript",
+      icon: "https://cdn.simpleicons.org/typescript",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "https://cdn.simpleicons.org/tailwindcss",
+    },
+    {
+      name: "Motion",
+      icon: "https://cdn.simpleicons.org/framer",
+    },
+    {
+      name: "Contentful",
+      icon: "https://cdn.simpleicons.org/contentful",
+    },
+  ];
+
+  const SecondTools = [
+    {
+      name: "NodeJS",
+      icon: "https://cdn.simpleicons.org/nodedotjs",
+    },
+    {
+      name: "ExpressJS",
+      icon: "https://cdn.simpleicons.org/express/white",
+    },
+    {
+      name: "MongoDB",
+      icon: "https://cdn.simpleicons.org/mongodb",
+    },
+    {
+      name: "SQL",
+      icon: "https://cdn.simpleicons.org/mysql",
+    },
+    {
+      name: "Prisma",
+      icon: "https://cdn.simpleicons.org/prisma",
+    },
+  ];
+  const ThirdTools = [
+    {
+      name: "Linux",
+      icon: "https://cdn.simpleicons.org/linux",
+    },
+    {
+      name: "pnpm",
+      icon: "https://cdn.simpleicons.org/pnpm",
+    },
+    {
+      name: "Git",
+      icon: "https://cdn.simpleicons.org/git",
+    },
+    {
+      name: "GitHub",
+      icon: "https://cdn.simpleicons.org/github",
+    },
+    {
+      name: "Vercel",
+      icon: "https://cdn.simpleicons.org/vercel",
+    },
+    {
+      name: "Docker",
+      icon: "https://cdn.simpleicons.org/docker",
+    },
+  ];
+
   return (
     <>
       <div className="pb-12">
         {/* start grid */}
         <div className="grid grid-cols-3 grid-rows-[19rem_19rem_19rem] gap-3">
-
-            
           <div className="col-span-2 py-4 border group border-gray-200 rounded-xl flex  items-start px-5 justify-center [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] flex-col">
             <div className="flex items-center m-auto group relative">
               <svg
@@ -97,27 +183,93 @@ const Skills = () => {
               </svg>
 
               <div className="rounded-full bg-black py-1 px-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-  <img
-    src={porfileImg}
-    alt="profile"
-    className="w-16 h-16 rounded-full"
-  />
-</div>
-
-
+                <img
+                  src={porfileImg}
+                  alt="profile"
+                  className="w-16 h-16 rounded-full"
+                />
+              </div>
             </div>
 
             <div className="flex flex-col gap-1  ">
-            <HeartHandshake className=" h-5 w-5 text-black/80" />
-            <p className="text-sm  text-black/40">Collaboration</p>
-            <p className="font-bold text-lg text-black/80">I prioritize client collaboration,fostering open communication</p>
+              <HeartHandshake className=" h-5 w-5 text-black/80" />
+              <p className="text-sm  text-black/40">Collaboration</p>
+              <p className="font-bold text-lg text-black/80">
+                I prioritize client collaboration,fostering open communication
+              </p>
 
-            <button className=" mt-2 cursor-pointer hover:text-gray-600  flex items-center  gap-2 text-black/80 font-bold text-[13px]">Book a call <ArrowRight className="h-3 w-3"/> </button>
+              <button className=" mt-2 cursor-pointer hover:text-gray-600  flex items-center  gap-2 text-black/80 font-bold text-[13px]">
+                Book a call <ArrowRight className="h-3 w-3" />{" "}
+              </button>
             </div>
           </div>
 
           {/* {2} */}
-          <div className="col-span-1 bg-amber-300">2</div>
+          <div className="col-span-1 group transition-all ease-in-out  hover:bg-neutral-200 row-span-2 border pt-8 border-gray-200 rounded-xl">
+            <h3 className="w-full bg-linear-to-b from-[#fd81e298] to-[#da7bda] bg-clip-text px-4 text-center text-2xl leading-[100%] font-bold tracking-tighter text-transparent select-none dark:from-[#edeffd">
+              Passionate about cutting-edge technologies
+            </h3>
+
+            <div className="my-15">
+              <Marquee>
+                {FirstTools.map((item) => (
+                  <ToolComp
+                    key={item.name + "1a"}
+                    name={item.name}
+                    icon={item.icon}
+                  />
+                ))}
+              </Marquee>
+            </div>
+            <div className="my-15">
+              <Marquee direction="right">
+                {SecondTools.map((item) => (
+                  <ToolComp
+                    key={item.name + "1a"}
+                    name={item.name}
+                    icon={item.icon}
+                  />
+                ))}
+              </Marquee>
+            </div>
+            <div className="my-15">
+              <Marquee direction="right">
+                {ThirdTools.map((item) => (
+                  <ToolComp
+                    key={item.name + "1a"}
+                    name={item.name}
+                    icon={item.icon}
+                  />
+                ))}
+              </Marquee>
+            </div>
+
+            <div className="bg-white rounded-xl group border-2 mx-12 border-gray-300">
+              <div className="flex items-center gap-1 py-2 pl-4">
+                <div className="h-[10px] w-[10px] rounded-full bg-red-600"></div>
+                <div className="h-[10px] w-[10px] rounded-full bg-yellow-600"></div>
+                <div className="h-[10px] w-[10px] rounded-full bg-green-600"></div>
+              </div>
+              <div className="bg-neutral-300 flex gap-3 pb-4 rounded-b-lg flex-col justify-center items-center  group">
+                <div className="mt-3 group">
+                  <div className="bg-neutral-400 rounded-xl px-14 py-3 hover:px-18 relative">
+                    <div className="bg-white h-[16px] w-[16px] top-1/2  -translate-x-1/2 -translate-y-1/2 rounded-full right-3 absolute"></div>
+                  </div>
+                </div>
+                <h1 className="text-center text-lg text-black/70 font-semibold px-2 mt-2">
+                  Websites that stand out <br />
+                  and make a difference
+                </h1>
+                <div className="flex items-center gap-3 justify-center">
+                    <button className="bg-blue-700 py-1.5 text-gray-100 px-3.5 text-sm rounded-3xl">Get started</button>
+                    <button className="border-2 border-gray-500 py-1 text-black/80 px-3.5 text-sm rounded-3xl">Read More</button>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* {3} */}
           <div className="col-span-1 row-span-2 bg-amber-300">3</div>
           <div className="col-span-1 bg-amber-300">4</div>
           <div className="col-span-1 bg-amber-300">5</div>
