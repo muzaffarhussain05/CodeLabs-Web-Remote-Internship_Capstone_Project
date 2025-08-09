@@ -8,7 +8,8 @@ import {
   FileText,
   FileHeart,
   Contact,
-  Link2,FolderMinus
+  Link2,
+  FolderMinus,
 } from "lucide-react";
 
 const icons = {
@@ -20,8 +21,7 @@ const icons = {
   FileHeart,
   Contact,
   Link2,
-  FolderMinus
-
+  FolderMinus,
 };
 
 const Navbar = () => {
@@ -73,28 +73,26 @@ const Navbar = () => {
     },
   ];
 
-  const moreLinks=[
+  const moreLinks = [
     {
-        name: "Links",
-        detail: "All of my links are here",
-        icon: "Link2",
-        path: "/links",
-      },
+      name: "Links",
+      detail: "All of my links are here",
+      icon: "Link2",
+      path: "/links",
+    },
     {
-        name: "Uses",
-        detail: "A peek into my digital world",
-        icon: "User",
-        path: "/uses",
-      },
+      name: "Uses",
+      detail: "A peek into my digital world",
+      icon: "User",
+      path: "/uses",
+    },
     {
-        name: "Attribution",
-        detail: "Journey to create this site",
-        icon: "FolderMinus",
-        path: "/attribution",
-      },
-
-
-  ]
+      name: "Attribution",
+      detail: "Journey to create this site",
+      icon: "FolderMinus",
+      path: "/attribution",
+    },
+  ];
   const [showSearchNav, setShowSearchNav] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const searchRef = useRef(null);
@@ -161,53 +159,52 @@ const Navbar = () => {
           </svg>
         </div>
 
-        <div className="text-black items-center space-x-1 rounded-full border border-black/10 bg-black/5 px-1 py-1.5 backdrop-blur-md max-sm:hidden">
+        <div className="text-black items-center space-x-1 rounded-full border border-black/10 bg-black/5 px-2 py-0.5 backdrop-blur-md max-sm:hidden">
           {navLinks.map((navlink) => {
             if (navlink.name === "More") {
               return (
                 <div
                   key={navlink.name}
-                  className="relative px-4 py-1.5 text-sm font-light text-black cursor-pointer transition hover:text-black/80 rounded-xl inline-block"
+                  className="relative px-4 py-1.5 z-100 text-[14px] font-light text-black cursor-pointer transition hover:text-black/80 rounded-xl inline-block"
                   onMouseEnter={() => setShowMoreDropdown(true)}
                   onMouseLeave={() => setShowMoreDropdown(false)}
                 >
                   {navlink.name}
                   {showMoreDropdown && (
                     <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg p-4 w-48 z-50 border border-gray-200">
-                      
                       {moreLinks.map((navlink) => {
-                  const IconComponent = icons[navlink.icon];
-                  return (
-                    <NavLink
-                      onClick={() => setShowSearchNav(false)}
-                      key={navlink.detail}
-                      to={navlink.path}
-                      className="flex items-center gap-4 hover:bg-black/40 py-1 rounded-xl px-3 my-3"
-                    >
-                      {({ isActive }) => (
-                        <>
-                          <div
-                            className={`p-2 rounded-lg transition ${
-                              isActive
-                                ? "bg-black text-white"
-                                : "bg-gray-200 text-black"
-                            }`}
+                        const IconComponent = icons[navlink.icon];
+                        return (
+                          <NavLink
+                            onClick={() => setShowSearchNav(false)}
+                            key={navlink.detail}
+                            to={navlink.path}
+                            className="flex items-center gap-4 hover:bg-black/40 py-1 rounded-xl  px-2 my-2"
                           >
-                            <IconComponent size={20} />
-                          </div>
-                          <div className="flex flex-col justify-center">
-                            <p className="font-semibold text-[15px]">
-                              {navlink.name}
-                            </p>
-                            <p className="text-black/70 text-[14px]">
-                              {navlink.detail}
-                            </p>
-                          </div>
-                        </>
-                      )}
-                    </NavLink>
-                  );
-                })}
+                            {({ isActive }) => (
+                              <>
+                                <div
+                                  className={`p-2 rounded-lg transition ${
+                                    isActive
+                                      ? "bg-black text-white"
+                                      : "bg-gray-200 text-black"
+                                  }`}
+                                >
+                                  <IconComponent size={20} />
+                                </div>
+                                <div className="flex flex-col justify-center">
+                                  <p className="font-semibold text-[15px]">
+                                    {navlink.name}
+                                  </p>
+                                  <p className="text-black/70 text-[14px]">
+                                    {navlink.detail}
+                                  </p>
+                                </div>
+                              </>
+                            )}
+                          </NavLink>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -223,7 +220,7 @@ const Navbar = () => {
                       e.preventDefault();
                       setShowDialog(true);
                     }}
-                    className="px-4 py-1.5 text-sm font-light text-black transition hover:text-black/80 relative bg-black/30 hover:bg-black/25 rounded-2xl cursor-pointer inline-block"
+                    className="px-2 py-1 text-[14px] font-light text-black transition hover:text-black/80 relative bg-black/30 hover:bg-black/25 rounded-2xl cursor-pointer inline-block"
                   >
                     {navlink.name}
                   </a>
@@ -233,7 +230,7 @@ const Navbar = () => {
 
             return (
               <NavLink
-                className={`px-4 py-1.5 text-sm font-light text-black transition hover:text-black/80 relative ${
+                className={`px-2.5 py-1 text-[14px] font-light text-black transition hover:text-black/80 relative ${
                   navlink.name === "Book a Call"
                     ? "bg-black/30 hover:bg-black/25 rounded-2xl"
                     : ""
@@ -315,9 +312,9 @@ const Navbar = () => {
         {showSearchNav && (
           <div
             ref={searchRef}
-            className="absolute bg-transparent left-1/2 top-65 -translate-x-1/2 -translate-y-1/2"
+            className="absolute bg-transparent left-1/2 md:top-65 top-75 -translate-x-1/2 -translate-y-1/2 z-70"
           >
-            <div className="bg-white rounded-2xl py-4 w-[700px]">
+            <div className="bg-white rounded-2xl py-4 md:w-[700px]">
               <div className="flex items-center gap-2 px-4 text-gray-500 text-sm">
                 <Search className="" />
                 <input
@@ -337,7 +334,7 @@ const Navbar = () => {
 
               <div className="bg-gray-300 h-[1px] mt-4"></div>
 
-              <div className="mt-1.5 px-3 overflow-y-auto h-[300px]">
+              <div className="mt-1.5 px-3 overflow-y-auto md:h-[300px] h-[400px]">
                 <p className="text-gray-600 text-sm">Navigation</p>
 
                 {filteredNavigation.map((navlink) => {
