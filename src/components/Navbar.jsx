@@ -141,7 +141,18 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex items-center justify-between py-5">
+   
+
+   <div className="relative">
+  {/* Placeholder to preserve layout height */}
+  <div className="h-[var(--navbar-height)]"></div>
+
+  {/* Fixed navbar */}
+  <div
+    className="flex items-center justify-between  pt-5 fixed top-0 left-0 w-full  z-[100] md:px-14 px-6"
+    style={{ '--navbar-height': '40px' }} // adjustable height
+  >
+    <div className="flex items-center  justify-between py-1 w-full">
         <div className="text-black">
           <svg
             className="size-[35px]"
@@ -375,6 +386,11 @@ const Navbar = () => {
           </div>
         )}
       </div>
+    
+  </div>
+</div>
+
+      
     </>
   );
 };

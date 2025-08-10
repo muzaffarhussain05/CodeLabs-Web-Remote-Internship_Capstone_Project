@@ -19,8 +19,8 @@ const Home = () => {
     <>
       <div className="absolute top-1/2 left-1/2  z-1 h-[350px] w-xl -translate-x-1/2 -translate-y-1/2 bg-purple-300/90 blur-[150px] dark:bg-[#0b0218]"></div>
 
-      <div className="flex justify-center  items-center relative md:mt-12 px-3 md:max-w-xl lg:max-w-5xl z-10   top-42 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-        <div className="flex flex-col items-center justify-center gap-10">
+      <div className="flex justify-center   items-center relative md:mt-12 px-3 md:max-w-xl lg:max-w-5xl z-10   top-42 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+        <div className="flex flex-col items-center justify-center gap-10 md:mt-30">
           <div className="animate-fadeInUp my-2  text-center text-5xl leading-snug! font-semibold text-balance text-zinc-800 opacity-90  dark:text-zinc-100 ">
             <p className="">I help founders turn ideas</p>
             <p className="">

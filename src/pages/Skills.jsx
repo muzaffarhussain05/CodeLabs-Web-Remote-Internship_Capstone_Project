@@ -2,7 +2,7 @@ import React from "react";
 import porfileImg from "../assets/porfile.jpg";
 import { ArrowRight, HeartHandshake } from "lucide-react";
 import Marquee from "react-fast-marquee";
-
+import GlobeMap from "../components/GlobeMap";
 const ToolComp = ({ name, icon }) => {
   return (
     <>
@@ -205,7 +205,7 @@ const Skills = () => {
           </div>
 
           {/* {2} */}
-          <div className="col-span-1 group transition-all ease-in-out  hover:bg-neutral-200 row-span-2 border pt-8 border-gray-200 rounded-xl">
+          <div className="col-span-1 group transition-all ease-in-out  hover:bg-neutral-100 row-span-2 border pt-8 border-gray-200 rounded-xl">
             <h3 className="w-full bg-linear-to-b from-[#fd81e298] to-[#da7bda] bg-clip-text px-4 text-center text-2xl leading-[100%] font-bold tracking-tighter text-transparent select-none dark:from-[#edeffd">
               Passionate about cutting-edge technologies
             </h3>
@@ -261,16 +261,29 @@ const Skills = () => {
                   and make a difference
                 </h1>
                 <div className="flex items-center gap-3 justify-center">
-                    <button className="bg-blue-700 py-1.5 text-gray-100 px-3.5 text-sm rounded-3xl">Get started</button>
-                    <button className="border-2 border-gray-500 py-1 text-black/80 px-3.5 text-sm rounded-3xl">Read More</button>
-                    
+                  <button className="bg-blue-700 py-1.5 text-gray-100 px-3.5 text-sm rounded-3xl">
+                    Get started
+                  </button>
+                  <button className="border-2 border-gray-500 py-1 text-black/80 px-3.5 text-sm rounded-3xl">
+                    Read More
+                  </button>
                 </div>
               </div>
             </div>
           </div>
 
           {/* {3} */}
-          <div className="col-span-1 row-span-2 bg-amber-300">3</div>
+          <div className="col-span-1 row-span-2 group transition-all ease-in-out overflow-hidden hover:bg-neutral-100 border pt-8 border-gray-200 rounded-xl">
+            <h3 className="w-full  bg-linear-to-b from-[#81a2fd98] to-[#7b9cda] bg-clip-text  px-6 text-center text-3xl leading-[100%] font-bold tracking-tighter text-transparent select-none dark:from-[#edeffd">
+              I'm very flexible with time zone communications
+            </h3>
+
+            <div className="flex items-center overflow-hidden justify-center gap-3 mt-10 text-sm " >
+              <GlobeMap />
+            </div>
+          </div>
+
+          {/* {4} */}
           <div className="col-span-1 bg-amber-300">4</div>
           <div className="col-span-1 bg-amber-300">5</div>
           <div className="col-span-2 row-span-2 bg-amber-300">6</div>
