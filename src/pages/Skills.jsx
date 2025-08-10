@@ -1,7 +1,7 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import porfileImg from "../assets/porfile.jpg";
 import { Link } from "react-router-dom";
-import {  HeartHandshake, MapPin } from "lucide-react";
+import { HeartHandshake, PanelsTopLeft, MapPin } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import GlobeMap from "../components/GlobeMap";
 import Wings from "../assets/wings.svg";
@@ -91,6 +91,33 @@ const Skills = () => {
     {
       name: "Docker",
       icon: "https://cdn.simpleicons.org/docker",
+    },
+  ];
+  const cards = [
+    {
+      title: "Payment System Architecture",
+      description:
+        "Handles recurring payments, upgrades, downgrades, and cancellations seamlessly to enhance user experience.",
+    },
+    {
+      title: "Monitoring & Analytics Infrastructure",
+      description:
+        "Provides real-time insights into user behavior, system performance, and key business metrics.",
+    },
+    {
+      title: "Design System & UI Consistency",
+      description:
+        "Unified design assets, including logos and themes, ensuring consistent branding across the platform.",
+    },
+    {
+      title: "API Gateway & Documentation",
+      description:
+        "Guides developers to integrate with the SaaS platform efficiently, offering examples and best practices.",
+    },
+    {
+      title: "User Onboarding Flow Design",
+      description:
+        "Step-by-step guides and interactive tutorials to help users get started and maximize platform benefits.",
     },
   ];
 
@@ -307,16 +334,18 @@ const Skills = () => {
           </div>
 
           {/* {4} */}
-          <div className="col-span-1 flex items-center justify-center gap-6 flex-col  hover:bg-neutral-100 border py-8 border-gray-200  rounded-xl">
+          <div className="col-span-1 flex items-center justify-center gap-6 flex-col  hover:bg-neutral-100 border py-8 border-gray-200 overflow-hidden rounded-xl">
             <div className="relative">
               <img src={Wings} alt="Wings" className="w-full" />
               <div className="absolute left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2 bg-white px-3 flex  items-center justify-center py-3 rounded-full">
-               <img src={Logo} alt="Wings" className="w-10 h-10 " />
+                <img src={Logo} alt="Wings" className="w-10 h-10 " />
               </div>
             </div>
-            
+
             <div>
-              <p className="font-bold shiny-text text-2xl text-black/70 text-center">Let's work together <br/> on your next project</p>
+              <p className="font-bold shiny-text text-2xl text-black/70 text-center">
+                Let's work together <br /> on your next project
+              </p>
             </div>
             <div
               onClick={handleCopy}
@@ -328,8 +357,35 @@ const Skills = () => {
           </div>
 
           {/* {5} */}
-          <div className="col-span-1 bg-amber-300">5</div>
-          <div className="col-span-2 row-span-2 bg-amber-300">6</div>
+
+          <div className="col-span-2 row-span-2 hover:bg-neutral-100 border py-1 border-gray-200  rounded-xl  relative gap-3 flex flex-col items-center justify-center overflow-hidden  ">
+            <div className="group relative flex overflow-hidden">
+              <div className="flex gap-4 animate-marquee overflow-hidden group-hover:[animation-play-state:paused]">
+                {[...cards, ...cards].map((card, i) => (
+                  <figure
+                    key={i}
+                    className="card-blur w-[150px] rounded-xl hover:scale-[1.02] hover:shadow-lg"
+                  >
+                    <figcaption className="text-md font-bold text-neutral-900 dark:text-white">
+                      {card.title}
+                    </figcaption>
+                    <blockquote className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
+                      {card.description}
+                    </blockquote>
+                  </figure>
+                ))}
+              </div>
+            </div>
+
+            <div className=" bottom-0 px-3 py-3 shadow-md left-0 absolute flex flex-col gap-1 bg-gradient-to-b from-white to-white/30 rounded-t-xl w-full">
+              {/* Heading */}
+              <PanelsTopLeft  className="w-8 h-8"/>
+              <h3 className="text-neutral-500 ">The Inside Scoop</h3>
+              <p className="text-xl font-semibold text-neutral-700 dark:text-neutral-200 ">
+                Currently building a SaaS Application
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Nyght+Serif:wght@300;400;700&family=Roboto&display=swap');
-
 @import "tailwindcss";
 
+/* Dark mode variant */
 @custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
     @apply font-sans;
-    font-family: 'Outfit', 'Nyght Serif', 'Roboto', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'Outfit', 'Nyght Serif', 'Roboto', ui-sans-serif, system-ui,
+                 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 }
 
-
 @layer utilities {
   .shiny-text {
-    --primary: #000;               /* base text color (black) */
-    --highlight: rgba(255,255,255,0.95); /* bright highlight */
+    --primary: #000; /* base text color */
+    --highlight: rgba(255, 255, 255, 0.95); /* highlight */
+
     background-image: linear-gradient(
       -75deg,
       var(--primary) 0%,
@@ -27,8 +29,8 @@
     background-position: 0% 0;
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent; /* needed for Safari/Chrome */
-    color: transparent;                   /* Tailwind-friendly fallback */
+    -webkit-text-fill-color: transparent; /* Safari/Chrome */
+    color: transparent;
     text-shadow:
       rgba(255, 255, 255, 0.3) 0 0 8px,
       rgba(255, 255, 255, 0.2) 0 0 16px,
@@ -40,5 +42,39 @@
     0%   { background-position: -100% 0; }
     100% { background-position: 200% 0; }
   }
+
+  .animate-marquee {
+    display: flex;
+    min-width: max-content;
+    animation: marquee 25s linear infinite;
+  }
 }
 
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+@layer components {
+  .card-blur {
+    /* tailwind utility mix + explicit filter */
+    @apply relative w-64 overflow-hidden rounded-xl border p-4
+           border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800
+           transition-transform duration-300;
+    /* actual blur + smooth transition for filter (explicit) */
+    filter: blur(1px);
+    transition-property: filter, transform, box-shadow;
+    transition-duration: 180ms;
+    transition-timing-function: ease;
+  }
+
+  /* remove blur on hover */
+  .card-blur:hover {
+    filter: blur(0);
+  }
+
+ 
+  
+}
