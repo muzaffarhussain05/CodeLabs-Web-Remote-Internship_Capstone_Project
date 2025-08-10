@@ -1,8 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import porfileImg from "../assets/porfile.jpg";
-import { ArrowRight, HeartHandshake } from "lucide-react";
+import { Link } from "react-router-dom";
+import {  HeartHandshake, MapPin } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import GlobeMap from "../components/GlobeMap";
+import Wings from "../assets/wings.svg";
+import Logo from "../assets/logo.svg";
+import { Copy, ArrowRight, CheckCheck } from "lucide-react";
 const ToolComp = ({ name, icon }) => {
   return (
     <>
@@ -89,6 +93,17 @@ const Skills = () => {
       icon: "https://cdn.simpleicons.org/docker",
     },
   ];
+
+  const [copied, setCopied] = useState(false);
+  const Icon = copied ? CheckCheck : Copy;
+  const Text = copied ? "Copied to clipboard" : "hello@aayushbharti.in";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("hello@aaysh.in").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   return (
     <>
@@ -205,7 +220,7 @@ const Skills = () => {
           </div>
 
           {/* {2} */}
-          <div className="col-span-1 group transition-all ease-in-out  hover:bg-neutral-100 row-span-2 border pt-8 border-gray-200 rounded-xl">
+          <div className="col-span-1 group transition-all ease-in-out  hover:bg-neutral-100 row-span-2 border pt-8 border-gray-200 rounded-xl relative">
             <h3 className="w-full bg-linear-to-b from-[#fd81e298] to-[#da7bda] bg-clip-text px-4 text-center text-2xl leading-[100%] font-bold tracking-tighter text-transparent select-none dark:from-[#edeffd">
               Passionate about cutting-edge technologies
             </h3>
@@ -233,7 +248,7 @@ const Skills = () => {
               </Marquee>
             </div>
             <div className="my-15">
-              <Marquee direction="right">
+              <Marquee direction="left">
                 {ThirdTools.map((item) => (
                   <ToolComp
                     key={item.name + "1a"}
@@ -273,18 +288,46 @@ const Skills = () => {
           </div>
 
           {/* {3} */}
-          <div className="col-span-1 row-span-2 group transition-all ease-in-out overflow-hidden hover:bg-neutral-100 border pt-8 border-gray-200 rounded-xl">
+          <div className="col-span-1 row-span-2 group transition-all ease-in-out overflow-hidden hover:bg-neutral-100 border pt-8 border-gray-200  relative rounded-xl">
+            <div className=" w-[200px] flex justify-center items-start flex-col gap-0.5 h-[120px] absolute bottom-3 left-3 z-11">
+              <MapPin className="text-white/80 w-8 h-8 " />
+              <p className="tex-[11px] text-white/90">Remote</p>
+              <p className="text-xl text-white font-meduim">Pakistan</p>
+              <Link className="flex items-center gap-1 mt-1 hover:bg-black/70 bg-black/40 text-white rounded-2xl px-2 py-1 text-sm ">
+                Contact now <ArrowRight className="w-4 h-4 " />
+              </Link>
+            </div>
             <h3 className="w-full  bg-linear-to-b from-[#81a2fd98] to-[#7b9cda] bg-clip-text  px-6 text-center text-3xl leading-[100%] font-bold tracking-tighter text-transparent select-none dark:from-[#edeffd">
               I'm very flexible with time zone communications
             </h3>
 
-            <div className="flex items-center overflow-hidden justify-center gap-3 mt-10 text-sm " >
+            <div className="flex items-center overflow-hidden justify-center gap-3 mt-10 text-sm ">
               <GlobeMap />
             </div>
           </div>
 
           {/* {4} */}
-          <div className="col-span-1 bg-amber-300">4</div>
+          <div className="col-span-1 flex items-center justify-center gap-6 flex-col  hover:bg-neutral-100 border py-8 border-gray-200  rounded-xl">
+            <div className="relative">
+              <img src={Wings} alt="Wings" className="w-full" />
+              <div className="absolute left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2 bg-white px-3 flex  items-center justify-center py-3 rounded-full">
+               <img src={Logo} alt="Wings" className="w-10 h-10 " />
+              </div>
+            </div>
+            
+            <div>
+              <p className="font-bold shiny-text text-2xl text-black/70 text-center">Let's work together <br/> on your next project</p>
+            </div>
+            <div
+              onClick={handleCopy}
+              className="flex items-center gap-2 text-black/90 text-sm cursor-pointer hover:text-black/80 transition-all ease-in-out duration-75"
+            >
+              <Icon className="h-3 w-3" />
+              {Text}
+            </div>
+          </div>
+
+          {/* {5} */}
           <div className="col-span-1 bg-amber-300">5</div>
           <div className="col-span-2 row-span-2 bg-amber-300">6</div>
         </div>

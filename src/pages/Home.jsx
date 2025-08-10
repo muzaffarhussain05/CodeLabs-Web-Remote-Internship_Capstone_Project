@@ -27,11 +27,10 @@ const Home = () => {
               {" "}
               into seamless{" "}
               <span
-                className="font-nyght  bg-linear-to-b from-zinc-500 via-zinc-600 to-zinc-900 bg-clip-text font-semibold tracking-wide text-transparent dark:from-zinc-700 dark:via-zinc-200 dark:to-zinc-50"
-                style={{ fontFamily: "nyght" }}
-              >
-                digital experiences
-              </span>
+  className="font-nyght font-bold bg-linear-to-b from-zinc-500 via-zinc-600 to-zinc-900 bg-clip-text tracking-wide text-transparent dark:from-zinc-700 dark:via-zinc-200 dark:to-zinc-50"
+>
+  digital experiences
+</span>
             </p>
           </div>
 
