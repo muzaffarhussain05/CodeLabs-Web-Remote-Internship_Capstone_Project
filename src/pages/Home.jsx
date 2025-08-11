@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import imgWide from "../assets/img-wide.webp";
 import { Copy, ArrowRight, CheckCheck } from "lucide-react";
 import Skills from "./Skills";
-
+import Work from "./Work";
+import {Link} from "react-router-dom"
 const Home = () => {
   const [copied, setCopied] = useState(false);
   const Icon = copied ? CheckCheck : Copy;
@@ -71,6 +72,10 @@ const Home = () => {
 
 
       <Skills/>
+      <Work/>
+      <div className="mt-18 flex ">
+        <Link className="flex ">See more projects <ArrowRight /> </Link>
+      </div>
     </>
   );
 };

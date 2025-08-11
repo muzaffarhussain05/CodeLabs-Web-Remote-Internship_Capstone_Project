@@ -7,7 +7,7 @@ import GlobeMap from "../components/GlobeMap";
 import Wings from "../assets/wings.svg";
 import Logo from "../assets/logo.svg";
 import { Copy, ArrowRight, CheckCheck } from "lucide-react";
-const ToolComp = ({ name, icon }) => {
+export const ToolComp = ({ name, icon }) => {
   return (
     <>
       <div className="bg-white-2 flex items-center justify-center rounded-lg border-2 border-gray-300 px-3 py-1 text-sm w-fit whitespace-nowrap shrink-0 gap-2 bg-neutral-100 mx-4">
