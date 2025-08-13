@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Project1Url from "../assets/project-1.jpg";
 import Project2Url from "../assets/project-2.jpg";
 import Project3Url from "../assets/project-3.jpg";
@@ -132,9 +132,9 @@ const Work = () => {
 
   return (
     <>
-      <div className="mt-25 ">
+      <div className="md:mt-25 max-sm:mt-17 ">
         <div
-          className="relative z-[2] mb-20 text-center sm:text-5xl md:mb-36 md:text-6xl text-balance"
+          className="relative z-[2] mb-10  text-center sm:text-5xl md:mb-36 md:text-6xl text-balance"
           style={{
             textShadow:
               "rgba(255, 255, 255, 0.05) 0px 4px 8px, rgba(255, 255, 255, 0.25) 0px 8px 30px",
@@ -152,12 +152,11 @@ const Work = () => {
         </div>
 
         <div className="snap-y snap-mandatory overflow-y-scroll no-scrollbar h-screen">
-        {projects.slice(0, 3).map((proj) => (
-  <div key={proj.title} className="snap-start">
-    <ProjectCard {...proj} />
-  </div>
-))}
-
+          {projects.slice(0, 5).map((proj) => (
+            <div key={proj.title} className="snap-start ">
+              <ProjectCard {...proj} />
+            </div>
+          ))}
         </div>
       </div>
     </>

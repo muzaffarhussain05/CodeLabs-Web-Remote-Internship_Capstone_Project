@@ -5,16 +5,18 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+
 import { Layout } from "./pages/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import Blog from "./pages/Blog";
-
+import ScrollToTop from "./components/ScrollToTop";
 const router = createBrowserRouter(
   createRoutesFromElements(
-    
-    <Route path="/" element={<Layout />}>
+
+    <Route path="/" element={<> <ScrollToTop /> <Layout /> </> }>
+
     <Route index element={<Home />} />
     <Route path="/about" element={<About />} />
     <Route path="work" element={<Work/>} />
@@ -28,8 +30,11 @@ const router = createBrowserRouter(
 
 const App = () => {
   return (
+   <>
+
   
-     <RouterProvider router={router} />
+  <RouterProvider router={router} />
+   </>
   );
 };
 

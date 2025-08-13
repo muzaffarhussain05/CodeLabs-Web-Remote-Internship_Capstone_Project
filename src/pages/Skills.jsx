@@ -10,13 +10,14 @@ import { Copy, ArrowRight, CheckCheck } from "lucide-react";
 export const ToolComp = ({ name, icon }) => {
   return (
     <>
-      <div className="bg-white-2 flex items-center justify-center rounded-lg border-2 border-gray-300 px-3 py-1 text-sm w-fit whitespace-nowrap shrink-0 gap-2 bg-neutral-100 mx-4">
-        <img height="18" width="18" alt="ReactJS" src={icon} class="" />
-        <p className="font-semibold text-black/60 text-sm">{name}</p>
+      <div className="bg-white-2 flex items-center justify-center rounded-lg border-2 border-gray-300 md:px-3 px-2 py-1 text-sm md:w-fit md:whitespace-nowrap shrink-0 md:gap-2 gap-1 bg-neutral-100 md:mx-4 ">
+        <img height="18" width="18" alt="ReactJS" src={icon} class="max-sm:h-4 max-sm:w-4 " />
+        <p className="md:font-semibold text-black/60 md:text-sm text-xs">{name}</p>
       </div>
     </>
   );
 };
+
 const Skills = () => {
   const FirstTools = [
     {
@@ -123,7 +124,7 @@ const Skills = () => {
 
   const [copied, setCopied] = useState(false);
   const Icon = copied ? CheckCheck : Copy;
-  const Text = copied ? "Copied to clipboard" : "hello@aayushbharti.in";
+  const Text = copied ? "Copied to clipboard" : "muzaffarhussain0055@gmail.com";
 
   const handleCopy = () => {
     navigator.clipboard.writeText("hello@aaysh.in").then(() => {
@@ -136,14 +137,15 @@ const Skills = () => {
     <>
       <div className="pb-12">
         {/* start grid */}
-        <div className="grid grid-cols-3 grid-rows-[19rem_19rem_19rem] gap-3">
-          <div className="col-span-2 py-4 border group border-gray-200 rounded-xl flex  items-start px-5 justify-center [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] flex-col">
-            <div className="flex items-center m-auto group relative">
+        <div className="grid md:grid-cols-3 md:grid-rows-[19rem_19rem_19rem] grid-cols-1 grid-rows-[6rem_19rem_19rem_19rem,19rem_19rem]  gap-3">
+          <div className="md:col-span-2 md:py-4 row-span-1 border group border-gray-200 rounded-xl flex  items-start md:px-5 px-2 justify-center [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] flex-col max-sm:overflow-hidden max-sm:relative max-sm:pb-14">
+            <div className="flex items-center m-auto group relative max-sm:right-40 max-sm:overfull-hidden">
               <svg
                 class=" [mask-image:linear-gradient(to_right,transparent,black_20%,black_90%,transparent)]"
                 width="604"
                 height="150"
                 viewBox="0 0 637 250"
+                className="max-sm:w-[680px] max-sm:h-[280px] "
               >
                 <g clip-path="url(#clip0_170_308)">
                   <g filter="url(#filter0_i_170_308)">
@@ -228,31 +230,31 @@ const Skills = () => {
                 <img
                   src={porfileImg}
                   alt="profile"
-                  className="w-16 h-16 rounded-full"
+                  className="md:w-16 md:h-16 w-24 h-24 rounded-full"
                 />
               </div>
             </div>
 
-            <div className="flex flex-col gap-1  ">
-              <HeartHandshake className=" h-5 w-5 text-black/80" />
-              <p className="text-sm  text-black/40">Collaboration</p>
-              <p className="font-bold text-lg text-black/80">
+            <div className="flex flex-col gap-1 max-sm:absolute max-sm:top-33  ">
+              <HeartHandshake className="h-9 w-9  md:h-5 md:w-5 text-black/80" />
+              <p className="md:text-sm text-[16px] text-black/40">Collaboration</p>
+              <p className="font-bold max-sm:text-sm max-sm:font-semibold  md:text-lg text-black/80">
                 I prioritize client collaboration,fostering open communication
               </p>
 
-              <button className=" mt-2 cursor-pointer hover:text-gray-600  flex items-center  gap-2 text-black/80 font-bold text-[13px]">
+              <button className=" md:mt-2 cursor-pointer hover:text-gray-600  flex items-center  gap-2 text-black/80 md:font-bold text-[13px]">
                 Book a call <ArrowRight className="h-3 w-3" />{" "}
               </button>
             </div>
           </div>
 
           {/* {2} */}
-          <div className="col-span-1 group transition-all ease-in-out  hover:bg-neutral-100 row-span-2 border pt-8 border-gray-200 rounded-xl relative">
+          <div className="md:col-span-1 group transition-all ease-in-out  hover:bg-neutral-100 row-span-2 border pt-8  border-gray-200 rounded-xl relative">
             <h3 className="w-full bg-linear-to-b from-[#fd81e298] to-[#da7bda] bg-clip-text px-4 text-center text-2xl leading-[100%] font-bold tracking-tighter text-transparent select-none dark:from-[#edeffd">
               Passionate about cutting-edge technologies
             </h3>
 
-            <div className="my-15">
+            <div className="md:my-15 my-8">
               <Marquee>
                 {FirstTools.map((item) => (
                   <ToolComp
@@ -263,7 +265,7 @@ const Skills = () => {
                 ))}
               </Marquee>
             </div>
-            <div className="my-15">
+            <div className="md:my-15 my-8 ">
               <Marquee direction="right">
                 {SecondTools.map((item) => (
                   <ToolComp
@@ -274,7 +276,7 @@ const Skills = () => {
                 ))}
               </Marquee>
             </div>
-            <div className="my-15">
+            <div className="md:my-15 my-8">
               <Marquee direction="left">
                 {ThirdTools.map((item) => (
                   <ToolComp
@@ -286,7 +288,7 @@ const Skills = () => {
               </Marquee>
             </div>
 
-            <div className="bg-white rounded-xl group border-2 mx-12 border-gray-300">
+            <div className="bg-white rounded-xl group border-2 md:mx-12 border-gray-200">
               <div className="flex items-center gap-1 py-2 pl-4">
                 <div className="h-[10px] w-[10px] rounded-full bg-red-600"></div>
                 <div className="h-[10px] w-[10px] rounded-full bg-yellow-600"></div>
@@ -298,7 +300,7 @@ const Skills = () => {
                     <div className="bg-white h-[16px] w-[16px] top-1/2  -translate-x-1/2 -translate-y-1/2 rounded-full right-3 absolute"></div>
                   </div>
                 </div>
-                <h1 className="text-center text-lg text-black/70 font-semibold px-2 mt-2">
+                <h1 className="text-center text-lg text-black/90 font-semibold px-2 mt-2">
                   Websites that stand out <br />
                   and make a difference
                 </h1>
@@ -315,7 +317,7 @@ const Skills = () => {
           </div>
 
           {/* {3} */}
-          <div className="col-span-1 row-span-2 group transition-all ease-in-out overflow-hidden hover:bg-neutral-100 border pt-8 border-gray-200  relative rounded-xl">
+          <div className="md:col-span-1 md:row-span-2 group transition-all ease-in-out overflow-hidden hover:bg-neutral-100 border pt-8 border-gray-200  relative rounded-xl">
             <div className=" w-[200px] flex justify-center items-start flex-col gap-0.5 h-[120px] absolute bottom-3 left-3 z-11">
               <MapPin className="text-white/80 w-8 h-8 " />
               <p className="tex-[11px] text-white/90">Remote</p>
@@ -334,7 +336,7 @@ const Skills = () => {
           </div>
 
           {/* {4} */}
-          <div className="col-span-1 flex items-center justify-center gap-6 flex-col  hover:bg-neutral-100 border py-8 border-gray-200 overflow-hidden rounded-xl">
+          <div className="md:col-span-1 flex items-center justify-center gap-6 flex-col  hover:bg-neutral-100 border py-8 border-gray-200 overflow-hidden rounded-xl">
             <div className="relative">
               <img src={Wings} alt="Wings" className="w-full" />
               <div className="absolute left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2 bg-white px-3 flex  items-center justify-center py-3 rounded-full">
@@ -358,7 +360,7 @@ const Skills = () => {
 
           {/* {5} */}
 
-          <div className="col-span-2 row-span-2 hover:bg-neutral-100 border py-1 border-gray-200  rounded-xl  relative gap-3 flex flex-col items-center justify-center overflow-hidden  ">
+          <div className="md:col-span-2 md:row-span-2 hover:bg-neutral-100 border py-1 border-gray-200  rounded-xl  relative gap-3 flex flex-col items-center justify-center overflow-hidden  ">
             <div className="group relative flex overflow-hidden">
               <div className="flex gap-4 animate-marquee overflow-hidden group-hover:[animation-play-state:paused]">
                 {[...cards, ...cards].map((card, i) => (
@@ -379,7 +381,7 @@ const Skills = () => {
 
             <div className=" bottom-0 px-3 py-3 shadow-md left-0 absolute flex flex-col gap-1 bg-gradient-to-b from-white to-white/30 rounded-t-xl w-full">
               {/* Heading */}
-              <PanelsTopLeft  className="w-8 h-8"/>
+              <PanelsTopLeft className="w-8 h-8" />
               <h3 className="text-neutral-500 ">The Inside Scoop</h3>
               <p className="text-xl font-semibold text-neutral-700 dark:text-neutral-200 ">
                 Currently building a SaaS Application

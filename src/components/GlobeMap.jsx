@@ -52,7 +52,7 @@ export default function GlobeMap() {
 
       {/* Circular Globe */}
       <div
-        className="w-[600px] h-[700px]  rounded-full overflow-hidden shadow-lg bg-black flex items-center justify-center border border-gray-300"
+        className="md:w-[600px] md:h-[700px]  h-[400px]  rounded-full overflow-hidden shadow-lg bg-black flex items-center justify-center border border-gray-300"
         style={{ touchAction: "none" }}
       >
         <Globe
@@ -62,7 +62,7 @@ export default function GlobeMap() {
           backgroundColor="rgba(0,0,0,0)"
           width={700}
           height={700}
-          className="min-w-[700px] max-h-[700px]"
+          className="md:min-w-[700px] md:max-h-[700px]"
         />
       </div>
     </div>

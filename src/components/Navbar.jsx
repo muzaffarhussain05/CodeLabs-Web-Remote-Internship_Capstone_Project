@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   Search,
   House,
@@ -45,7 +45,7 @@ const Navbar = () => {
       name: "Projects",
       detail: "Showcase of my projects",
       icon: "FolderGit",
-      path: "/projects",
+      path: "/work",
     },
     {
       name: "Blog",
@@ -94,11 +94,13 @@ const Navbar = () => {
     },
   ];
   const [showSearchNav, setShowSearchNav] = useState(false);
+  const [showBookCall,setShowBookCall]=useState(false)
+  const bookCallRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
   const searchRef = useRef(null);
   const toggleButtonRef = useRef(null);
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
-  const [showDialog, setShowDialog] = useState(false);
+
 
   const filteredNavigation = useMemo(() => {
     if (!searchTerm?.trim()) return navigation;
@@ -106,7 +108,31 @@ const Navbar = () => {
       nav.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [searchTerm, navigation]);
-
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (bookCallRef.current && !bookCallRef.current.contains(event.target)) {
+        setShowBookCall(false);
+      }
+    }
+    function handleEscKey(event) {
+      if (event.key === "Escape") {
+        setShowBookCall(false);
+      }
+    }
+  
+    if (showBookCall) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleEscKey);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscKey);
+    }
+  
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, [showBookCall]);
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -118,7 +144,7 @@ const Navbar = () => {
         setShowSearchNav(false);
       }
     }
-
+  
     function handleEscKey(event) {
       if (event.key === "Escape") {
         setShowSearchNav(false);
@@ -224,17 +250,17 @@ const Navbar = () => {
 
             if (navlink.name === "Book a Call") {
               return (
-                <div key={navlink.name} className="relative inline-block">
-                  <a
-                    href="#"
-                    onClick={(e) => {
+                <div  key={navlink.name} className="relative inline-block">
+                  <button
+                     onClick={(e) => {
                       e.preventDefault();
-                      setShowDialog(true);
+                      setShowBookCall(true);
                     }}
+                   
                     className="px-2 py-1 text-[14px] font-light text-black transition hover:text-black/80 relative bg-black/30 hover:bg-black/25 rounded-2xl cursor-pointer inline-block"
                   >
                     {navlink.name}
-                  </a>
+                  </button>
                 </div>
               );
             }
@@ -385,6 +411,141 @@ const Navbar = () => {
             </div>
           </div>
         )}
+
+ {showBookCall && (
+  <div
+    ref={bookCallRef}
+    className="absolute bg-transparent left-1/2 md:top-65 top-75 -translate-x-1/2 -translate-y-1/2 z-70"
+  >
+    <div className="bg-white rounded-2xl py-6 px-6 md:w-[500px] w-[90vw] shadow-lg">
+      <h2 className="text-md bg-gray-200 text-center border rounded-2xl border-gray-200 r font-medium text-black mb-4">Fill a form</h2>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          // submit form logic
+          setShowBookCall(false);
+        }}
+        className="space-y-4"
+      >
+        <div>
+          <label className="block text-sm font-medium mb-1 text-black/90">
+            Name
+          </label>
+          <input
+            type="text"
+            required
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none px-2 py-1  sm:text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-black/90 mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            required
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none px-2 sm:text-sm py-1"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-black/90">
+            Message
+          </label>
+          <textarea
+            required
+            rows={3}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm focus:outline-none px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-end gap-2">
+          <button
+            type="button"
+            onClick={() => setShowBookCall(false)}
+            className="px-4  cursor-pointer py-2 text-sm text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="px-4 py-2 text-sm text-white bg-blue-800 cursor-pointer rounded-md hover:bg-blue/600"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)} 
+
+
+        
+         {/* {showBookCall && (
+         <div
+         ref={searchRef}
+         className="absolute bg-transparent left-1/2 md:top-65 top-75 -translate-x-1/2 -translate-y-1/2 z-70"
+       >
+         <div className="bg-white rounded-2xl py-4 md:w-[700px]">
+           <div className="flex items-center gap-2 px-4 text-gray-500 text-sm">
+             <Search className="" />
+             <input
+               onChange={(e) => setSearchTerm(e.target.value)}
+               type="text"
+               placeholder="Search"
+               className="flex-3 placeholder:text-gray-500 focus:outline-none text-black/80"
+               autoFocus
+             />
+             <button
+               onClick={() => setShowSearchNav(false)}
+               className="border-1 border-gray-200 text-[14px] py-1 px-1 rounded-lg cursor-pointer"
+             >
+               ESC
+             </button>
+           </div>
+
+           <div className="bg-gray-300 h-[1px] mt-4"></div>
+
+           <div className="mt-1.5 px-3 overflow-y-auto md:h-[300px] h-[400px]">
+             <p className="text-gray-600 text-sm">Navigation</p>
+
+             {filteredNavigation.map((navlink) => {
+               const IconComponent = icons[navlink.icon];
+               return (
+                 <NavLink
+                   onClick={() => setShowSearchNav(false)}
+                   key={navlink.detail}
+                   to={navlink.path}
+                   className="flex items-center gap-2 hover:bg-black/40 py-1 rounded-xl px-3 my-3"
+                 >
+                   {({ isActive }) => (
+                     <>
+                       <div
+                         className={`p-2 rounded-lg transition ${
+                           isActive
+                             ? "bg-black text-white"
+                             : "bg-gray-200 text-black"
+                         }`}
+                       >
+                         <IconComponent size={20} />
+                       </div>
+                       <div className="flex flex-col justify-center">
+                         <p className="font-semibold text-[15px]">
+                           {navlink.name}
+                         </p>
+                         <p className="text-black/70 text-[14px]">
+                           {navlink.detail}
+                         </p>
+                       </div>
+                     </>
+                   )}
+                 </NavLink>
+               );
+             })}
+           </div>
+         </div>
+       </div>
+     
+        )}  */}
+        
       </div>
     
   </div>

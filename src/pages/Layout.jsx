@@ -1,12 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 export const Layout = () => {
   return (
     <>
-      <div className="bg-white md:px-14 px-6 py-1 h-screen ">
+      <div className="bg-white md:px-14 px-6 py-1 h-screen  ">
         <Navbar />
         <Outlet />
+        <Footer />
       </div>
     </>
   );
