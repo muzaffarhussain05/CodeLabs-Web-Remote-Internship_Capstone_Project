@@ -80,7 +80,7 @@ const Testimonials = () => {
 
           <div>
             <div className=" md:w-full overflow-hidden md:mt-8 mt-4 roundex-xl ">
-              <Marquee speed={speed} pauseOnHover={true}>
+              <Marquee speed={speed} >
                 <div className="flex md:gap-6 overflow-x-auto md:px-4  px-1 gap-2  py-2 md:py-6">
                   {testimonials.map((t, i) => (
                     <div

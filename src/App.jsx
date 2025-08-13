@@ -17,6 +17,7 @@ import ThesecretSkills from "./components/ThesecretSkills";
 import Mysite from "./pages/Mysite";
 import Skills from "./pages/Skills";
 import Testimonials from "./pages/Testimonials";
+import GetTouch from "./pages/GetTouch";
 const router = createBrowserRouter(
   createRoutesFromElements(
 
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
     <Route path="links" element={<Mysite/>} />
     <Route path="attribution" element={<Skills/>} />
     <Route path="guestbook" element={<Testimonials/>} />
+    <Route path="book-a-call" element="" />
    
   </Route>
   

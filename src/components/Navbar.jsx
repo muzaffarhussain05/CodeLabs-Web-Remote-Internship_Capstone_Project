@@ -108,6 +108,7 @@ const Navbar = () => {
       nav.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [searchTerm, navigation]);
+  
   useEffect(() => {
     function handleClickOutside(event) {
       if (bookCallRef.current && !bookCallRef.current.contains(event.target)) {
@@ -133,6 +134,7 @@ const Navbar = () => {
       document.removeEventListener("keydown", handleEscKey);
     };
   }, [showBookCall]);
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (

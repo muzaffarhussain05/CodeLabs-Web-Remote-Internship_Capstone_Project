@@ -1,12 +1,46 @@
-# React + Vite
+# 🌐 Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and interactive personal portfolio website built to showcase my projects, skills, and professional journey.  
+Designed with a focus on **performance, accessibility, and clean UI animations**.
 
-Currently, two official plugins are available:
+![Portfolio Preview](./src/assets/preview.jpg) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Responsive Design** — Works seamlessly on desktop, tablet, and mobile.
+- **Modern UI** — Built with Tailwind CSS and Framer Motion for smooth animations.
+- **Project Showcase** — Highlighting my best work with interactive cards and details.
+- **About & Skills Section** — Presenting my technical and soft skills.
+- **Contact & Call-to-Action** — Easy ways for recruiters or clients to reach me.
+
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend:**
+- [React.js](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+**Icons & Graphics:**
+- [Lucide Icons](https://lucide.dev/)
+- Custom SVG Illustrations
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+├── public/               # Static assets
+├── src/
+│   ├── assets/           # Images, icons, and media files
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Website pages (Home, About, Work, Contact, Blog)
+│   ├── index.css/           # Tailwind configuration & custom CSS
+│   ├── App.jsx           # Main app entry
+│   └── main.jsx          # React DOM render
+└── package.json

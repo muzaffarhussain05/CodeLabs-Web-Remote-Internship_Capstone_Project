@@ -28,9 +28,9 @@ const Home = () => {
       <div className="absolute top-1/2 left-1/2  z-1 h-[350px] w-xl -translate-x-1/2 -translate-y-1/2 bg-purple-300/90 blur-[150px] dark:bg-[#0b0218]"></div>
 
       <div className="flex justify-center   items-center relative md:mt-12 px-1 md:px-3 md:max-w-xl lg:max-w-5xl z-10   md:top-42 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2  max-sm:mt-16">
-        <div className="flex flex-col items-center justify-center gap-2 md:gap-10 md:mt-30 ">
-          <div className="animate-fadeInUp my-2  text-center  text-xl md:text-5xl md:leading-snug! font-semibold text-balance text-zinc-900 opacity-90  dark:text-zinc-100  max-sm:font-extrabold">
-            <p className=" max-sm:text-xl max-sm:leading-9">I help founders turn ideas</p>
+        <div className="flex flex-col items-center justify-center gap-2 md:gap-10 md:mt-44 ">
+          <div className="animate-fadeInUp my-2  text-center  text-xl md:text-5xl md:leading-21  font-semibold text-balance text-zinc-900 opacity-90  dark:text-zinc-100  max-sm:font-extrabold">
+            <p className=" max-sm:text-xl md:text-6xl  max-sm:leading-9">I help founders turn ideas</p>
             <p className="">
               {" "}
               into seamless{" "}
@@ -40,7 +40,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="flex max-sm:flex-col items-center gap-3 font-semibold text-black/70 md:text-lg max-sm:mt-7 ">
+          <div className="flex max-sm:flex-col  items-center gap-3 md:font-medium text-black/70 md:text-xl max-sm:mt-7 ">
             <p className="">Hello, I'm Muzaffar Hussain</p>
             <div>
               <img src={imgWide} alt="img" className="h-8 rounded-full" />
@@ -48,7 +48,7 @@ const Home = () => {
             <p>a Full Stack Developer</p>
           </div>
 
-          <div className="flex max-sm:flex-col items-center md:gap-12 gap-3 max-sm:mt-7">
+          <div className="flex max-sm:flex-col items-center  md:gap-10  gap-3 max-sm:mt-7">
             <div className="">
               <button className="cursor-pointer flex gap-4 items-center justify-between overflow-hidden rounded-full border border-black/30 bg-black/20 text-sm   pl-5 pr-2   text-black/80 font-semibold opacity-85 backdrop-blur-xs transition-all hover:bg-transparent py-1 md:py-1.5 dark:border-white/10 dark:bg-white/1  ">
                 Lets Connect{" "}
@@ -59,7 +59,7 @@ const Home = () => {
             </div>
             <div
               onClick={handleCopy}
-              className="flex items-center gap-2 text-black/90 text-sm cursor-pointer hover:text-black/80 transition-all ease-in-out duration-75"
+              className="flex items-center gap-2 text-black/90 text-sm cursor-pointer hover:text-black/80 transition-all ease-in-out duration-75 max-sm:mt-3"
             >
               <Icon className="h-3 w-3" />
               {Text}
@@ -68,7 +68,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div class="  border-t-5 md:mt-27 mt-9 w-full  mx-auto blur-[1px] border-black-300 md:h-72 h-15 rounded-[50%_/_50%] relative">
+      <div class="  border-t-5 md:mt-18 mt-12 w-full  mx-auto blur-[1px] border-black-300 md:h-42 h-15 rounded-[50%_/_50%] relative">
         <div className="w-full h-38 bg-[#AE8CD3] blur-[150px] absolute top-[-200px]"></div>
       </div>
 
