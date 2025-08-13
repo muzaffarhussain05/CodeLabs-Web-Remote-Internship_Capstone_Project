@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="absolute top-1/2 left-1/2  z-1 h-[350px] w-xl -translate-x-1/2 -translate-y-1/2 bg-purple-300/90 blur-[150px] dark:bg-[#0b0218]"></div>
+      <div className="absolute top-1/2 left-1/2  z-1 h-[350px] max-sm:w-full md:w-xl -translate-x-1/2 -translate-y-1/2 bg-purple-300/90 blur-[150px] dark:bg-[#0b0218]"></div>
 
       <div className="flex justify-center   items-center relative md:mt-12 px-1 md:px-3 md:max-w-xl lg:max-w-5xl z-10   md:top-42 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2  max-sm:mt-16">
         <div className="flex flex-col items-center justify-center gap-2 md:gap-10 md:mt-44 ">
