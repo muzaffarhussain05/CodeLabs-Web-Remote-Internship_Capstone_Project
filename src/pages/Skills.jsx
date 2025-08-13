@@ -10,9 +10,17 @@ import { Copy, ArrowRight, CheckCheck } from "lucide-react";
 export const ToolComp = ({ name, icon }) => {
   return (
     <>
-      <div className="bg-white-2 flex items-center justify-center rounded-lg border-2 border-gray-300 md:px-3 px-2 py-1 text-sm md:w-fit md:whitespace-nowrap shrink-0 md:gap-2 gap-1 bg-neutral-100 md:mx-4 ">
-        <img height="18" width="18" alt="ReactJS" src={icon} class="max-sm:h-4 max-sm:w-4 " />
-        <p className="md:font-semibold text-black/60 md:text-sm text-xs">{name}</p>
+      <div className="bg-white-2 flex items-center justify-center rounded-lg border-2 border-gray-300 md:px-3 gap-1 px-2 py-1 text-sm md:w-fit md:whitespace-nowrap shrink-0 md:gap-2 max-sm:mx-2 bg-neutral-100 md:mx-4 ">
+        <img
+          height="18"
+          width="18"
+          alt="ReactJS"
+          src={icon}
+          class="max-sm:h-3 max-sm:w-3 "
+        />
+        <p className="md:font-semibold text-black/60 md:text-sm text-xs">
+          {name}
+        </p>
       </div>
     </>
   );
@@ -237,7 +245,9 @@ const Skills = () => {
 
             <div className="flex flex-col gap-1 max-sm:absolute max-sm:top-33  ">
               <HeartHandshake className="h-9 w-9  md:h-5 md:w-5 text-black/80" />
-              <p className="md:text-sm text-[16px] text-black/40">Collaboration</p>
+              <p className="md:text-sm text-[16px] text-black/40">
+                Collaboration
+              </p>
               <p className="font-bold max-sm:text-sm max-sm:font-semibold  md:text-lg text-black/80">
                 I prioritize client collaboration,fostering open communication
               </p>
