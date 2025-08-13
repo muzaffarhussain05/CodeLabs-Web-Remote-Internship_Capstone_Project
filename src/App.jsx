@@ -12,6 +12,11 @@ import About from "./pages/About";
 import Work from "./pages/Work";
 import Blog from "./pages/Blog";
 import ScrollToTop from "./components/ScrollToTop";
+
+import ThesecretSkills from "./components/ThesecretSkills";
+import Mysite from "./pages/Mysite";
+import Skills from "./pages/Skills";
+import Testimonials from "./pages/Testimonials";
 const router = createBrowserRouter(
   createRoutesFromElements(
 
@@ -21,6 +26,10 @@ const router = createBrowserRouter(
     <Route path="/about" element={<About />} />
     <Route path="work" element={<Work/>} />
     <Route path="blog" element={<Blog/>} />
+    <Route path="uses" element={<ThesecretSkills/>} />
+    <Route path="links" element={<Mysite/>} />
+    <Route path="attribution" element={<Skills/>} />
+    <Route path="guestbook" element={<Testimonials/>} />
    
   </Route>
   

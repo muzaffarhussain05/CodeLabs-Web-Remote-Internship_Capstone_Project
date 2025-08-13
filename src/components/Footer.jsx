@@ -49,7 +49,7 @@ const Footer = () => {
             <p className="font-medium text-black  ">General</p>
             <div className="gap-3 flex  text-sm md:flex-col ">
               {generalLinks.map((link) => {
-                const disabledLinks = ["About", "Contact"]; // names or paths you want to disable
+                const disabledLinks = ["", "Contact"]; // names or paths you want to disable
                 const isDisabled = disabledLinks.includes(link.name);
 
                 return isDisabled ? (

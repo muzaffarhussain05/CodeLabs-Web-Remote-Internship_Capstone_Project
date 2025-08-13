@@ -283,7 +283,7 @@ const Home = () => {
       <About />
       <Testimonials />
       <Mysite />
-      <GetTouch />
+     
     </>
   );
 };

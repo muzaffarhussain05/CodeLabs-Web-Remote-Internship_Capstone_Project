@@ -479,72 +479,7 @@ const Navbar = () => {
 
 
         
-         {/* {showBookCall && (
-         <div
-         ref={searchRef}
-         className="absolute bg-transparent left-1/2 md:top-65 top-75 -translate-x-1/2 -translate-y-1/2 z-70"
-       >
-         <div className="bg-white rounded-2xl py-4 md:w-[700px]">
-           <div className="flex items-center gap-2 px-4 text-gray-500 text-sm">
-             <Search className="" />
-             <input
-               onChange={(e) => setSearchTerm(e.target.value)}
-               type="text"
-               placeholder="Search"
-               className="flex-3 placeholder:text-gray-500 focus:outline-none text-black/80"
-               autoFocus
-             />
-             <button
-               onClick={() => setShowSearchNav(false)}
-               className="border-1 border-gray-200 text-[14px] py-1 px-1 rounded-lg cursor-pointer"
-             >
-               ESC
-             </button>
-           </div>
-
-           <div className="bg-gray-300 h-[1px] mt-4"></div>
-
-           <div className="mt-1.5 px-3 overflow-y-auto md:h-[300px] h-[400px]">
-             <p className="text-gray-600 text-sm">Navigation</p>
-
-             {filteredNavigation.map((navlink) => {
-               const IconComponent = icons[navlink.icon];
-               return (
-                 <NavLink
-                   onClick={() => setShowSearchNav(false)}
-                   key={navlink.detail}
-                   to={navlink.path}
-                   className="flex items-center gap-2 hover:bg-black/40 py-1 rounded-xl px-3 my-3"
-                 >
-                   {({ isActive }) => (
-                     <>
-                       <div
-                         className={`p-2 rounded-lg transition ${
-                           isActive
-                             ? "bg-black text-white"
-                             : "bg-gray-200 text-black"
-                         }`}
-                       >
-                         <IconComponent size={20} />
-                       </div>
-                       <div className="flex flex-col justify-center">
-                         <p className="font-semibold text-[15px]">
-                           {navlink.name}
-                         </p>
-                         <p className="text-black/70 text-[14px]">
-                           {navlink.detail}
-                         </p>
-                       </div>
-                     </>
-                   )}
-                 </NavLink>
-               );
-             })}
-           </div>
-         </div>
-       </div>
-     
-        )}  */}
+        
         
       </div>
     
