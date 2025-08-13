@@ -27,13 +27,11 @@ const Home = () => {
     <>
       <div className="absolute top-1/2 left-1/2  z-1 h-[350px] max-sm:w-full md:w-xl -translate-x-1/2 -translate-y-1/2 bg-purple-300/90 blur-[150px] dark:bg-[#0b0218]"></div>
 
-      <div className="flex justify-center   items-center relative md:mt-12 px-1 md:px-3 md:max-w-xl lg:max-w-5xl z-10   md:top-42 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2  max-sm:mt-16">
+      <div className="flex justify-center   items-center relative md:mt-12 px-1 md:px-3 md:max-w-xl lg:max-w-5xl z-10   md:top-42 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2  max-sm:mt-28  ">
         <div className="flex flex-col items-center justify-center gap-2 md:gap-10 md:mt-44 ">
-          <div className="animate-fadeInUp my-2  text-center  text-xl md:text-5xl md:leading-21  font-semibold text-balance text-zinc-900 opacity-90  dark:text-zinc-100  max-sm:font-extrabold">
-            <p className=" max-sm:text-xl md:text-6xl  max-sm:leading-9">I help founders turn ideas</p>
-            <p className="">
-              {" "}
-              into seamless{" "}
+          <div className="animate-fadeInUp my-2  text-center  max-sm:text-5xl md:text-5xl md:leading-21  font-semibold text-balance text-zinc-900 opacity-90  dark:text-zinc-100  max-sm:font-semibold  ">
+            <p className="  md:text-5xl md:leading-15 max-sm:text-4xl leading-12     ">
+              I help founders turn ideas into seamless{" "}
               <span className="font-nyght font-bold bg-linear-to-b from-zinc-500 via-zinc-600 to-zinc-900 bg-clip-text tracking-wide text-transparent dark:from-zinc-700 dark:via-zinc-200 dark:to-zinc-50">
                 digital experiences
               </span>
@@ -283,7 +281,6 @@ const Home = () => {
       <About />
       <Testimonials />
       <Mysite />
-     
     </>
   );
 };
